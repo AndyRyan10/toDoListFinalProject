@@ -65,9 +65,21 @@ class ListViewController: UITableViewController, UIPopoverPresentationController
      override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
      if editingStyle == .delete {
      // Delete the row from the data source
+        let alertController = UIAlertController(title: "Confirm?", message: "Do you want to delete: \(toDos[indexPath.row].title)?", preferredStyle: .alert)
         
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
         
-     tableView.deleteRows(at: [indexPath], with: .fade)
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive, handler: { (alert) in
+            toDoData.remove(at: indexPath.row)
+            self.toDos = toDoData
+            self.toDoList.deleteRows(at: [indexPath], with: .fade)
+
+        })
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(deleteAction)
+        present(alertController, animated: true, completion: nil)
+        
      } else if editingStyle == .insert {
      // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
      }

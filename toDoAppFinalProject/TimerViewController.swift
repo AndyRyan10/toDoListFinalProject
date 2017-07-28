@@ -9,6 +9,8 @@
 import UIKit
 
 class TimerViewController: UIViewController {
+    
+    var toDo: ToDoItem?
 
     override func viewDidLoad() {
         super.viewDidLoad()
