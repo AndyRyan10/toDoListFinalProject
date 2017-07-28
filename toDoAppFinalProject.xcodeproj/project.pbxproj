@@ -16,6 +16,7 @@
 		E8CCB3801F290AD3003EDD0B /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CCB37F1F290AD3003EDD0B /* ToDoItem.swift */; };
 		E8CCB3821F290AFC003EDD0B /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CCB3811F290AFC003EDD0B /* SampleData.swift */; };
 		E8CCB3841F290C19003EDD0B /* ToDoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CCB3831F290C19003EDD0B /* ToDoViewCell.swift */; };
+		E8CCB3861F2A149D003EDD0B /* NewToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8CCB3851F2A149D003EDD0B /* NewToDo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		E8CCB37F1F290AD3003EDD0B /* ToDoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
 		E8CCB3811F290AFC003EDD0B /* SampleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		E8CCB3831F290C19003EDD0B /* ToDoViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoViewCell.swift; sourceTree = "<group>"; };
+		E8CCB3851F2A149D003EDD0B /* NewToDo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewToDo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 			children = (
 				E8CCB3691F28EBB5003EDD0B /* AppDelegate.swift */,
 				E8CCB36D1F28EBB5003EDD0B /* Main.storyboard */,
+				E8CCB3851F2A149D003EDD0B /* NewToDo.swift */,
 				E8CCB37D1F290A3C003EDD0B /* TimerViewController.swift */,
 				E8CCB37B1F2909DC003EDD0B /* ListViewController.swift */,
 				E8CCB3831F290C19003EDD0B /* ToDoViewCell.swift */,
@@ -148,6 +151,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8CCB3861F2A149D003EDD0B /* NewToDo.swift in Sources */,
 				E8CCB37C1F2909DC003EDD0B /* ListViewController.swift in Sources */,
 				E8CCB37E1F290A3C003EDD0B /* TimerViewController.swift in Sources */,
 				E8CCB3841F290C19003EDD0B /* ToDoViewCell.swift in Sources */,
