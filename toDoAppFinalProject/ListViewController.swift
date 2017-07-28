@@ -84,19 +84,12 @@ class ListViewController: UITableViewController, UIPopoverPresentationController
         
     }
     override func viewDidAppear(_ animated: Bool) {
-        
+        toDos = toDoData
         toDoList.reloadData()
     }
     
 // MARK: - Navigation
-// MARK: - IBActions
-// MARK: - Helper Functions
-    func imageForPoms(pomodoros: Int) -> UIImage?{
-        let imageName = "POM#\(pomodoros).png"
-        return UIImage(named: imageName)
-    }
     
-// MARK: - Delegates / Extensions
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .fullScreen
     }
@@ -105,12 +98,19 @@ class ListViewController: UITableViewController, UIPopoverPresentationController
         let navigationController = UINavigationController(rootViewController: controller.presentedViewController)
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .done, target: self, action: #selector(ListViewController.dismissViewController))
         
-        let saveButton = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(ListViewController.saveViewController))
+        //let saveButton = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(ListViewController.saveViewController))
         navigationController.topViewController?.navigationItem.title = "Add To Do"
-        navigationController.topViewController?.navigationItem.rightBarButtonItem = saveButton
+        //navigationController.topViewController?.navigationItem.rightBarButtonItem = saveButton
         navigationController.topViewController?.navigationItem.leftBarButtonItem = cancelButton
         
         return navigationController
+    }
+
+// MARK: - IBActions
+// MARK: - Helper Functions
+    func imageForPoms(pomodoros: Int) -> UIImage?{
+        let imageName = "POM#\(pomodoros).png"
+        return UIImage(named: imageName)
     }
     
     func dismissViewController() {
@@ -119,44 +119,8 @@ class ListViewController: UITableViewController, UIPopoverPresentationController
         self.dismiss(animated: true, completion: nil)
         
     }
+
+// MARK: - Delegates / Extensions
+ 
     
-    func saveViewController() {
-        print("save clicked")
-        self.dismiss(animated: true, completion: nil)
-    }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-   
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

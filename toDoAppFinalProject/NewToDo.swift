@@ -78,6 +78,18 @@ class NewToDo: UIViewController {
 // MARK: - Helper Functions
 // MARK: - Delegates / Extensions
     
+    
+    func saveViewController() {
+        if let newTitle = userTitle.text {
+            
+            let newToDo = ToDoItem(title: newTitle, quadrant: nil, pomodoros: Int(pomSlider.value), snoozeDate: nil, dueDate: dueDate)
+            
+            toDoData.append(newToDo)
+        }
+        
+        self.dismiss(animated: true, completion: nil)
+        }
+    
     func imageForPoms(pomodoros: Int) -> UIImage?{
         let imageName = "POM#\(pomodoros).png"
         return UIImage(named: imageName)
@@ -93,6 +105,9 @@ class NewToDo: UIViewController {
         zeroLabel.isHidden = true
         threeLabel.isHidden = true
         
+        let saveButton = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(NewToDo.saveViewController))
+        
+        navigationItem.rightBarButtonItem = saveButton
 
         // Do any additional setup after loading the view.
     }
