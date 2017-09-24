@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+/*
 class ToDoItem: CustomStringConvertible {
     var title: String
     var quadrant: Int?
@@ -29,3 +29,4 @@ class ToDoItem: CustomStringConvertible {
     
 }
 
+*/

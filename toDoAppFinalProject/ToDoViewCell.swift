@@ -21,24 +21,26 @@ class ToDoViewCell: UITableViewCell {
             toDoTitle.text = toDo?.title
             
             if toDo?.dueDate != nil {
-                let dateDue = toDo?.dueDate!
-                let dateFormatter = DateFormatter()
-                dateFormatter.timeStyle = DateFormatter.Style.none
-                dateFormatter.dateStyle = DateFormatter.Style.short
-                toDoDueDate.text = "Due: " + dateFormatter.string(from: dateDue!)
+                if let dateDue = toDo?.dueDate! as Date? {
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.timeStyle = DateFormatter.Style.none
+                    dateFormatter.dateStyle = DateFormatter.Style.short
+                    toDoDueDate.text = "Due: " + dateFormatter.string(from: dateDue)
             }
             
             if toDo?.pomodoros != nil {
-                if let correctImage = self.imageForPoms(pomodoros: (toDo?.pomodoros!)!) {
+                if let correctImage = self.imageForPoms(pomodoros: (toDo?.pomodoros)!)
+                 {
                     pomodoroImageView.image = correctImage
                 }
             }
             
         }
     }
+    }
     
     
-    func imageForPoms(pomodoros: Int) -> UIImage?{
+    func imageForPoms(pomodoros: Int32) -> UIImage?{
         let imageName = "POM#\(pomodoros).png"
         return UIImage(named: imageName)
     }

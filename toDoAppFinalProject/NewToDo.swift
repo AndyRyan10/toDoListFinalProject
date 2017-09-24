@@ -82,9 +82,9 @@ class NewToDo: UIViewController {
     func saveViewController() {
         if let newTitle = userTitle.text {
             
-            let newToDo = ToDoItem(title: newTitle, quadrant: nil, pomodoros: Int(pomSlider.value), snoozeDate: nil, dueDate: dueDate)
+            //let newToDo = ToDoItem(title: newTitle, quadrant: nil, pomodoros: Int(pomSlider.value), snoozeDate: nil, dueDate: dueDate)
             
-            toDoData.append(newToDo)
+            //toDoData.append(newToDo)
         }
         
         self.dismiss(animated: true, completion: nil)
